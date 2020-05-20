@@ -12,4 +12,6 @@ class Board extends Model
         'nUserID',
         // 'image',
     ];
+
+    
 }
