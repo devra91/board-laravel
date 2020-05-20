@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
-        /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -30,5 +29,14 @@ class UserController extends Controller
       $user = User::create($data);
 
       return response()->json(['data' => $user], 201);
+    }
+
+    public function login(Request $request)
+    {
+      if (!$token = auth()->attempt($request->only('email', 'password'))) {
+        return response(null, 401);
+      }
+  
+      return response()->json(compact('token'));
     }
 }
