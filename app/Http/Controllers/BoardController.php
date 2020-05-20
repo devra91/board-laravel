@@ -82,7 +82,7 @@ class BoardController extends Controller
         $data = $request->validate([
             'sTitle' => 'required',
             'sContext' => 'required',
-            'nUserID' => 'required',
+            // 'nUserID' => 'required',
         ]);
         $board->update($data);
 

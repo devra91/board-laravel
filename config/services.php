@@ -29,19 +29,5 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-    'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
-    ],
-
-    'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
-    ],
-    'passport' => [
-        'login_endpoint' => env('PASSPORT_LOGIN_ENDPOINT'),
-        'client_id' => env('PASSPORT_CLIENT_ID'),
-        'client_secret' => env('PASSPORT_CLIENT_SECRET'),
-    ],
 
 ];
