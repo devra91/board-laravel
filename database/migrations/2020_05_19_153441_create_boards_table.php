@@ -19,9 +19,9 @@ class CreateBoardsTable extends Migration
             $table->string('sContext', 1000);
             // $table->string('image');
             $table->timestamps();
-            // $table->integer('nUserID')->unsigned()->nullable();
+            $table->integer('nUserID')->unsigned()->nullable();
 
-            // $table->foreign('nUserID')->references('id')->on('users');
+            $table->foreign('nUserID')->references('id')->on('users');
         });
     }
     /**

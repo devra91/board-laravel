@@ -41,8 +41,10 @@ class BoardController extends Controller
         $data = $request->validate([
             'sTitle' => 'required',
             'sContext' => 'required',
-            // 'nUserID' => 'required',
         ]);
+        $data = $request->all();
+        $data['nUserID'] = auth()->user()->id;
+        
         $board = Board::create($data);
 
         return response($board, 201);
@@ -82,7 +84,6 @@ class BoardController extends Controller
         $data = $request->validate([
             'sTitle' => 'required',
             'sContext' => 'required',
-            // 'nUserID' => 'required',
         ]);
         $board->update($data);
 

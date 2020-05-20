@@ -39,4 +39,20 @@ class UserController extends Controller
   
       return response()->json(compact('token'));
     }
+
+    public function me(Request $request)
+    {
+     
+
+      
+      
+        $user = $request->user();
+
+        return response()->json([
+          'email' => $user->email,
+          'name' => $user->name,
+        ]);
+      
+    }
+  
 }
